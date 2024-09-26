@@ -18,25 +18,49 @@ repositories {
 }
 
 dependencies {
+	// Spring Boot Starters
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	implementation 'org.bytedeco:javacv-platform:1.5.8'
-	implementation 'org.springframework:spring-web'
-
-	// Dependências do MySQL e JPA
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // Starter do Spring Data JPA
-	implementation 'mysql:mysql-connector-java:8.0.32' // ou a versão que você deseja usar
-
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-	// Spring Boot DevTools para reinicialização automática
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Lombok (Compile-only)
+	compileOnly 'org.projectlombok:lombok:1.18.26' // Atualizado para a versão estável mais recente
+
+	// Swagger (OpenAPI)
+	implementation 'io.swagger.core.v3:swagger-annotations:2.2.10'
+	// MapStruct (Mapper)
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+	implementation 'ch.qos.logback:logback-classic:1.3.5'
+
+	// Retrofit (HTTP client)
+	implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+	implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+	// JavaCV (Computer Vision)
+	implementation 'org.bytedeco:javacv-platform:1.5.8'
+
+	// MySQL Connector
+	implementation 'mysql:mysql-connector-java:8.0.32'
+
+	// Spring Context
+	implementation 'org.springframework:spring-context:6.1.13'
+
+	// Validation
+	implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
+	implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+
+	// Test dependencies
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Spring Boot DevTools (Somente em desenvolvimento)
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {
